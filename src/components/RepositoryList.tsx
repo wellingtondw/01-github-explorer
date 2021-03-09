@@ -1,10 +1,10 @@
-import RepositoryItem from "./RepositoryItem"
+import { useEffect, useState } from "react"
+import RepositoryItem, { Repository } from "./RepositoryItem"
 
 import '../styles/repositories.scss'
-import { useEffect, useState } from "react"
 
 export default function RepositoryList() {
-  const [repositories, setRepositories] = useState([])
+  const [repositories, setRepositories] = useState<Repository[]>([])
 
   useEffect(() => {
     fetch('https://api.github.com/orgs/rocketseat/repos')
